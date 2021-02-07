@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import { Link } from 'react-router-dom';
 import { Form, Button, Container } from 'react-bootstrap';
 
-import './registration-view.scss';
+import './profile-edit-view.scss';
 
-export function RegistrationView(props) {
+export function ProfileEditView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -14,35 +13,31 @@ export function RegistrationView(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://movies4you-application.herokuapp.com/users', {
+        axios.put(`https://movies4you-application.herokuapp.com/users/${props.user}`, {
             Username: username,
             Password: password,
             Email: email,
             Birthday: birthday
-        })
-            .then(response => {
-                const data = response.data;
-                console.log(data);
-                // the second argument '_self' is necessary so that page will
-                // open in the current tab
+        },
+            {
+                headers: { Authorization: `Bearer ${props.userToken}` }
+            })
+            .then((response) => {
+                console.log(response);
+                localStorage.clear();
                 window.open('/', '_self');
             })
             .catch((error) => {
-                console.log('error registering the user')
+                console.log(error);
             });
-    };
+    }
 
     return (
         <Container>
-            <div className="top-area">
-                <Link to={'/'}>
-                    <Button className="back-button" variant="outline-danger">Back</Button>
-                </Link>
-            </div>
 
-            <Form className="registration-form">
+            <Form className="profile-edit-form">
                 <Form.Group controlId="formBasicUsername">
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label>New Username</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Enter username"
@@ -52,7 +47,7 @@ export function RegistrationView(props) {
                 </Form.Group>
 
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label>New Email</Form.Label>
                     <Form.Control
                         type="email"
                         placeholder="Enter email"
@@ -75,7 +70,7 @@ export function RegistrationView(props) {
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>New Password</Form.Label>
                     <Form.Control
                         type="password"
                         placeholder="Password"
@@ -85,12 +80,11 @@ export function RegistrationView(props) {
                 </Form.Group>
 
                 <Button
-                    className="register-button"
                     variant="primary"
                     type="submit"
                     onClick={handleSubmit}
                 >
-                    Register
+                    Apply
                 </Button>
 
             </Form>

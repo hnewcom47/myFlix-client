@@ -1,3 +1,9 @@
+.card {
+  width: 18rem;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
 .card-text {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -12,8 +18,7 @@
 
 .card-img-top {
   width: 100%;
-  height: 25vw;
-  object-fit: cover;
+  height: 420px;
 }
 
 .card-title {
@@ -32,12 +37,6 @@
   flex-wrap: wrap;
 }
 
-.main_div {
-  height: 100%;
-  width: 100%;
-  border-collapse: collapse;
-}
-
 .more-button {
   margin-bottom: 7px;
   margin-right: 7px;
@@ -46,6 +45,111 @@
 .favorite-button {
   margin-bottom: 7px;
   right: 20px;
+}
+
+.remove-button {
+  margin-bottom: 7px;
+  margin-right: 7px;
+}
+.filter-input {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 75%;
+}
+.welcome-area {
+  text-align: center;
+}
+
+.login-toggle {
+  margin-right: 5px;
+}
+
+.register-link {
+  margin-left: 5px;
+}
+
+.login-form {
+  width: 75%;
+  padding-top: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.login-button {
+  margin: 0 auto;
+}
+.top-area {
+  text-align: center;
+}
+
+.registration-form {
+  width: 75%;
+  padding-top: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.register-button {
+  margin: 0 auto;
+}
+.genre-view {
+  position: static;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.director-view {
+  position: static;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.navbar {
+  margin-bottom: 20px;
+}
+.movie-view {
+  position: static;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.movie-poster {
+  max-height: 400px;
+}
+
+.movie-genre,
+.movie-director {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-view {
+  margin: 0 auto;
+  position: static;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.favorite-movies-container {
+  padding-top: 30px;
+}
+
+.fav-movies {
+  text-align: start;
+}
+h3 {
+  text-align: center;
+}
+.container {
+  padding-top: 30px;
 }
 .my-flix {
   color: steelblue;

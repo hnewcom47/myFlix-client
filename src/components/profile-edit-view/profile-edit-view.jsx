@@ -35,6 +35,8 @@ export function ProfileEditView(props) {
     return (
         <Container>
 
+            <h3>Please enter your new profile information:</h3>
+
             <Form className="profile-edit-form">
                 <Form.Group controlId="formBasicUsername">
                     <Form.Label>New Username</Form.Label>
@@ -82,6 +84,7 @@ export function ProfileEditView(props) {
                 <Button
                     variant="primary"
                     type="submit"
+                    className="apply-button"
                     onClick={handleSubmit}
                 >
                     Apply

@@ -36,12 +36,12 @@ export function LoginView(props) {
     return (
         <Container>
             <div className="welcome-area">
-                <h2>Welcome to PrimeDome</h2>
-                <Button className="login-toggle" variant="primary" onClick={loginUser}>
+                <h2>Welcome to myFlix</h2>
+                <Button className="login-toggle btn-primary" onClick={loginUser}>
                     Login
                 </Button>
                 <Link to={'/register'}>
-                    <Button className="register-link" variant="secondary">Register</Button>
+                    <Button className="register-link btn-secondary">Register</Button>
                 </Link>
             </div>
 
